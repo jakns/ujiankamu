@@ -1,0 +1,130 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package ujiana1;
+import java.util.Scanner;
+/**
+ *
+ * @author zaki
+ */
+public class UjianA1 {
+    
+    public static void main(String[] args) {
+    System.out.println("================PERPUSTAKAAN HMIF FTUMJ=================");
+    Scanner keyboard = new Scanner(System.in);
+    System.out.print("Nama Peminjam         : ");
+    String a = keyboard.next();
+    System.out.print("Golongan Buku[A/B/C]  : ");
+    char b = keyboard.next().charAt(0);
+    System.out.print("Lama Peminjaman       : ");
+    int c = keyboard.nextInt();
+    
+    
+    
+    System.out.println(" \n");
+    
+    System.out.println("================PERPUSTAKAAN HMIF FTUMJ=================");
+    System.out.println("========================================================");
+    System.out.println("|| Golongan Buku || Nama Buku || Harga Sewa per 7 Hari||");
+    System.out.println("|| ------------- || --------- || ---------------------||");
+    System.out.println("||      A        ||     SBP   ||        Rp. 200,-     ||");
+    System.out.println("||      B        ||     DDP   ||        Rp. 150,-     ||");
+    System.out.println("||      C        ||     DAA   ||        Rp. 250,-     ||");
+    System.out.println("========================================================");
+    System.out.println("Catatan : Jika meminjam lebih dari 7 hari               ");
+    System.out.println("          maka setiap harinya dikenakan denda sebesar   ");
+    System.out.println("          Rp. 150,-                                     ");
+    System.out.println("================PERPUSTAKAAN HMIF FTUMJ=================");
+    System.out.println("Nama peminjam           : " +a);
+    System.out.println("Golongan Buku           : " +b);
+    System.out.println("Lama Peminjaman (hari)  : " +c);
+    System.out.println("================PERPUSTAKAAN HMIF FTUMJ=================");
+    System.out.println("Nama Peminjam           : " +a);
+    System.out.println(baru(b));
+    System.out.println(hargasewa(b));
+    System.out.println("Lama Peminjaman         : "+c+" hari");
+    //System.out.println(biayasewa(b,c));
+    //System.out.println(denda(c));
+    System.out.println(bayar(b,c));
+    
+    
+    }
+    
+    public static char bayar(int b,int c){
+    char l=0;
+        int sewa;
+        int denda = 0;
+        int bayar;
+        if (b=='A'){
+            sewa=200*c;
+            if (c>7)
+                denda=(c-7)*100;
+            if (c<=7)
+                denda=0;
+            bayar=sewa+denda;
+            System.out.println("Biaya Sewa              : Rp."+sewa);
+            System.out.println("Besar Denda             : Rp."+denda);
+            System.out.println("Total Bayar             : Rp."+bayar);
+        }    
+        if (b=='B'){
+            sewa=150*c;
+            if (c>7)
+                denda=(c-7)*100;
+            if (c<=7)
+                denda=0;
+            bayar=sewa+denda;
+            System.out.println("Biaya Sewa              : Rp."+sewa);
+            System.out.println("Besar Denda             : Rp."+denda);
+            System.out.println("Total Bayar             : Rp."+bayar);
+        }
+        if (b=='C'){
+            sewa=250*c;
+            if (c>7)
+                denda=(c-7)*100;
+            if (c<=7)
+                denda=0;
+            bayar=sewa+denda;
+            System.out.println("Biaya Sewa              : Rp."+sewa);
+            System.out.println("Besar Denda             : Rp."+denda);
+            System.out.println("Total Bayar             : Rp."+bayar);
+        }
+        System.out.println("========================================================");
+        return l;
+    }
+    
+    
+    public static char hargasewa (char b){
+    char l=0;
+        if (b=='A')
+            System.out.printf("Harga Sewa              : Rp. 200,-");
+        
+        if (b=='B')
+            System.out.printf("Harga Sewa              : Rp. 150,-");
+        
+        if (b=='C')
+            System.out.printf("Harga Sewa              : Rp. 250,-");
+        
+        return l;
+        
+    }
+    public static char baru (char b){
+    char l=0;
+         
+        if (b=='A')
+            System.out.printf("Nama Buku               : SBP");
+        
+        if (b=='B')
+            System.out.printf("Nama Buku               : DDP");
+        
+        if (b=='C')
+            System.out.printf("Nama Buku               : DAA");
+        
+        
+    
+        return l;
+        
+        
+}
+}
